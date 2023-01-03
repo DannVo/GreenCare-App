@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTintMode="multiply"
+    android:backgroundTint="#def4ed"
+    tools:context=".AddDeviceActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/gradient_end"
+            app:expandedTitleMarginStart="15dp"
+            app:expandedTitleMarginBottom="20dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <ImageView
+                android:fitsSystemWindows="true"
+                android:id="@+id/vItemHeader"
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/background_add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_collapseMode="parallax"
+                android:contentDescription="plant image" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/gradient"
+
+
+                android:contentInsetStart="0dp"
+                app:layout_collapseMode="parallax"
+                android:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-24dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:backgroundTint="#FFFFFF"
+            android:paddingHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/viewSupporter">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sivLine"
+                android:layout_width="70dp"
+                android:layout_height="5dp"
+                android:background="#E3B06C"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="10dp"
+                app:shapeAppearanceOverlay="@style/Circular"/>
+
+            <TextView
+                android:id="@+id/tvTitelAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:textColor="#FBB454"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sivLine"
+                android:text="Update Infomation"/>
+            <TextView
+                android:id="@+id/tvDevName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitelAdd"
+                android:text="Name"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"/>
+
+
+            <EditText
+                android:id="@+id/deviceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/orange_mix"
+                android:backgroundTint="#EAF6F6"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Name of device"
+                android:textSize="16sp"
+                android:padding="15dp"
+                android:textColor="#66BFBF"
+                android:textColorHint="#66BFBF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDevName" />
+
+                <TextView
+                android:id="@+id/tvDevDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deviceName"
+                android:text="Description"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/devDesc"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:gravity="top"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDevDesc"
+                android:fontFamily="@font/poppins_regular"
+                android:background="@drawable/orange_mix"
+                android:backgroundTint="#EAF6F6"
+                android:drawablePadding="20dp"
+                android:hint="Description"
+                android:padding="15dp"
+                android:textSize="16sp"
+                android:textColor="#3aaea5"
+                android:textColorHint="#3aaea5" />
+
+
+
+
+            <LinearLayout
+                android:id="@+id/llAddButt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/devDesc"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mbUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:fontFamily="@font/poppins_medium"
+                    android:layout_marginRight="10dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#FBBC67"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mbCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:layout_marginLeft="10dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="#EB4747"
+                    android:backgroundTint="#F3F4F3"
+                    android:fontFamily="@font/poppins_medium"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardElevation="0dp"
+    card_view:cardCornerRadius="20dp"
+    android:layout_marginBottom="10dp"
+    card_view:cardBackgroundColor="@android:color/transparent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Fragment.HomeFragment"
+
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/RL_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:id="@+id/llTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintLeft_toRightOf="@+id/img1"
+            card_view:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="This is Header Text"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="#6DCCA3"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="This is Description Text"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="#7E7D7D"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/likeReact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_heart"
+            android:layout_gravity="right"
+            android:backgroundTint="#c0c9c9"
+            android:elevation="30dp"
+            app:layout_constraintRight_toLeftOf="@+id/editPen"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:translationZ="20dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/editPen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_pen"
+            android:layout_gravity="right"
+            android:backgroundTint="#515151"
+            android:elevation="30dp"
+            app:layout_constraintLeft_toRightOf="@+id/likeReact"
+            android:layout_marginTop="8dp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp"
+            android:translationZ="20dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+
+    </style>
+    <style name="BottomCorner" >
+
+
+
+        <item name="android:topLeftRadius">0dp</item>
+        <item name="android:topRightRadius">0dp</item>
+        <item name="android:bottomRightRadius">60dp</item>
+        <item name="android:bottomLeftRadius">60dp</item>
+    </style>
+    <style name="BorderRadius">
+        <item name="cornerSize">10%</item>
+
+    </style>
+
+    <style name="LabelStyle">
+        <item name="android:background">@drawable/bg_label</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+</resources>

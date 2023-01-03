@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTintMode="multiply"
+    android:backgroundTint="#def4ed"
+    tools:context=".AddDeviceActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/gradient_end"
+            app:expandedTitleMarginStart="15dp"
+            app:expandedTitleMarginBottom="20dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <ImageView
+                android:fitsSystemWindows="true"
+                android:id="@+id/vItemHeader"
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/background_add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_collapseMode="parallax"
+                android:contentDescription="plant image" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/gradient"
+
+
+                android:contentInsetStart="0dp"
+                app:layout_collapseMode="parallax"
+                android:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"/>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <View
+            android:id="@+id/viewSupporter"
+            android:layout_width="2dp"
+            android:layout_height="1dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/vItemHeader"
+            android:layout_marginBottom="40dp"
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-24dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:backgroundTint="#F9F9F9"
+            android:paddingHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/viewSupporter">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/sivLine"
+                android:layout_width="70dp"
+                android:layout_height="5dp"
+                android:background="#8CBD80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="10dp"
+                app:shapeAppearanceOverlay="@style/Circular"/>
+
+            <TextView
+                android:id="@+id/tvTitelAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="#83BD75"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sivLine"
+                android:text="Add New Plant"/>
+
+            <TextView
+                android:id="@+id/tvAddName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitelAdd"
+                android:text="Plant name"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"/>
+
+
+
+            <EditText
+                android:id="@+id/devName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAddName"
+                android:backgroundTint="#D4ECDD"
+                android:textSize="16sp"
+
+                android:background="@drawable/orange_mix"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_regular"
+
+                android:hint="Name of tree"
+                android:padding="15dp"
+                android:textColor="#50CB93"
+                android:textColorHint="#50CB93" />
+
+            <TextView
+                android:id="@+id/tvIdIot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/devName"
+                android:text="Id Green-Care"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"/>
+
+
+
+            <EditText
+                android:id="@+id/etIdIoT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvIdIot"
+                android:backgroundTint="#D4ECDD"
+                android:textSize="16sp"
+
+                android:background="@drawable/orange_mix"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_regular"
+
+                android:hint="The id of Iot"
+                android:padding="15dp"
+                android:textColor="#50CB93"
+                android:textColorHint="#50CB93" />
+
+            <TextView
+                android:id="@+id/tvDescript"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etIdIoT"
+                android:text="Description"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="18sp"/>
+
+
+
+            <EditText
+                android:id="@+id/etDescript"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDescript"
+                android:backgroundTint="#D4ECDD"
+                android:textSize="16sp"
+                android:gravity="top"
+                android:background="@drawable/orange_mix"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_regular"
+
+                android:hint="Describe about your plant"
+                android:padding="15dp"
+                android:textColor="#50CB93"
+                android:textColorHint="#50CB93" />
+
+
+
+            <LinearLayout
+                android:id="@+id/llAddButt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etDescript"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mbAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:layout_marginRight="10dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#9EC595"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/mbCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:layout_marginLeft="10dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:textColor="#CA831C"
+                    android:backgroundTint="#F3F4F3"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--<EditText-->
+<!--android:id="@+id/deviceId"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/tvTitelAdd"-->
+
+
+
+<!--android:background="@drawable/orange_mix"-->
+<!--android:backgroundTint="#F7F5F2"-->
+<!--android:drawablePadding="20dp"-->
+<!--android:layout_marginTop="30dp"-->
+<!--android:hint="Device ID"-->
+<!--android:padding="15dp"-->
+<!--android:textColor="#3BACB6"-->
+<!--android:textColorHint="#3BACB6" />-->
+<!--<EditText-->
+<!--android:id="@+id/slug"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/devName"-->
+<!--android:backgroundTint="#F7F5F2"-->
+
+
+<!--android:background="@drawable/orange_mix"-->
+<!--android:drawablePadding="20dp"-->
+<!--android:layout_marginTop="20dp"-->
+<!--android:hint="Slug"-->
+<!--android:padding="15dp"-->
+<!--android:textColor="#3BACB6"-->
+<!--android:textColorHint="#3BACB6" />-->
+
+<!--<EditText-->
+<!--android:id="@+id/descriptDev"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/slug"-->
+<!--android:backgroundTint="#F7F5F2"-->
+
+
+<!--android:background="@drawable/orange_mix"-->
+<!--android:drawablePadding="20dp"-->
+<!--android:layout_marginTop="20dp"-->
+<!--android:hint="Description"-->
+<!--android:padding="15dp"-->
+<!--android:textColor="#3BACB6"-->
+<!--android:textColorHint="#3BACB6" />-->
